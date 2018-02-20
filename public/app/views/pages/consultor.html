@@ -1,0 +1,109 @@
+<div ng-if="main.loggedIn" ng-controller="ConsultorController as consultor">
+
+<div class="col-md-12">
+    <ol class="breadcrumb">
+        <li><a href="/">Medical Dojo</a></li>
+        <li class="active">Consultores</li>
+    </ol>
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+                <div class="pull-left"><span>Listado de medicos</span></div>
+                <div class="pull-right">
+                    <a href="" data-toggle="modal" data-target="#myModal">
+                        <span class="glyphicon glyphicon-file"></span>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="panel-body">
+                <div class="horizontal_scroll">
+
+                    <table class="table table-bordered table-hover table-responsive">
+                        <thead>
+                            <tr>
+                                <td>#</td>
+                                <td>Dni</td>
+                                <td>Consultor</td>
+                                <td>Comentario</td>
+                                <td>Email</td>
+                                <td>Direccion</td>
+                                <td>Telefono</td>
+                                <td>Codigo CMP</td>
+                                <td>Estado</td>
+                                <td>idBusiness</td>
+                                <td>Opciones</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           <!-- | orderBy: 'dateCreate':true -->
+
+
+                            <tr ng-repeat="each in consultor.consultores | reverse">
+                                <td style="background-color: #f5f5f5">{{ $index+1 }}</td>
+                                <td>{{each.idConsultant}}</td>
+                                <td>{{each.name}}</td>
+                                <td>{{each.comment}}</td>
+                                <td>{{each.email}}</td>
+                                <td>{{each.address}}</td>
+                                <td>{{each.phone}}</td>
+                                <td>{{each.officialcode}}</td>
+                                <td>{{each.status}}</td>
+                                <td>{{each.idBusiness}}</td>
+                                <td style="padding:5px">
+                                    <!-- <a href="" data-toggle="modal" data-target="#myModal">
+                                        <span class="glyphicon glyphicon-pencil"></span>
+                                    </a> -->
+                                    <!-- <a href="" data-toggle="modal" data-target="#myModal">
+                                        <span class="glyphicon glyphicon-trash"></span>
+                                    </a> -->
+                                    <button ng-click="consultor.selectConsultor(each)" data-toggle="modal" data-target="#myModalUpdate" class="btn btn-primary btn-xs btn-info"><span class="glyphicon glyphicon-pencil"></span></button>
+                                    <button ng-click="consultor.selectConsultor(each)" data-toggle="modal" data-target="#myModalDelete" class="btn btn-primary btn-xs btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <a href="#" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover">Toggle popover</a>
+
+
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div ng-include="'app/views/pages/consultor-new.html'">
+  </div>
+</div>
+
+
+
+
+
+<div class="modal fade" id="myModalUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabelUpdate">
+  <div ng-include="'app/views/pages/consultor-update.html'">
+  </div>
+</div>
+
+
+<div class="modal fade" id="myModalDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabelDelete">
+  <div ng-include="'app/views/pages/consultor-Delete.html'">
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>

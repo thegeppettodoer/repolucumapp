@@ -1,0 +1,28 @@
+<div ng-controller="MainController as login">
+    <!-- <div class="row"> -->
+      <!-- class="col-sm-12" -->
+      <div class="col-sm-3">
+      </div>
+        <div class="col-sm-6">
+
+            <h1>Login</h1>
+
+            <form name="form-signin" class="form-signin" method="post" ng-submit="login.doLogin()" >
+                Username: <input type="text" id="username" name="username" class="form-control" ng-model="login.loginData.username">
+                Password: <input type="password" name="password" class="form-control" ng-model="login.loginData.password">
+
+                 <button type="submit" class="btn btn-success">Login</button>
+
+                 <div  ng-if="login.error" class="alert alert-dismissible alert-danger">
+                   <button type="button" class="close" data-dismiss="alert">&times;</button>
+                   <strong>Inicio de sesion!</strong> <a href="#" class="alert-link">{{login.error }}</a>
+                 </div>
+
+            </form>
+
+
+        </div>
+        <div class="col-sm-3">
+        </div>
+    <!-- </div> -->
+</div>

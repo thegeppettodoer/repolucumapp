@@ -1,0 +1,158 @@
+
+  <!-- <div ng-repeat="consultorUp in consultor.consultoresUp" class="modal fade" id="myModalUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabelUpdate"> -->
+
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button  ng-click="consultor.cancelConsultor()" type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h4 class="modal-title">Borrar Medico</h4>
+          </div>
+
+          <form method="post" name="formConsultorDelete" class="form-horizontal" >
+
+              <div class="modal-body">
+                  <div class="form-group">
+                      <!-- <label class="control-label alert-danger col-sm-2" for="inputIdConsultant">Id Consultor:</label>  -->
+                      <div class="col-sm-3">
+                          <input type="text" class="form-control" id="inputIdConsultant" placeholder="*Dni/ Identificacion legal..." ng-model="consultor.actualizarConsultor.idConsultant">
+                      </div>
+                      <div class="col-sm-9">
+                          <input type="text" class="form-control" id="inputConsultor" placeholder="*Nombre del medico..." ng-model="consultor.actualizarConsultor.name">
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <!-- <label class="control-label col-sm-2" for="inputEmail">Email:</label> -->
+                      <div class="col-sm-12">
+                          <input type="email" class="form-control" id="inputEmail" placeholder="*Email..." for="inputError" ng-model="consultor.actualizarConsultor.email" required oninvalid="this.setCustomValidity('Ingresar email valido')">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <!-- <label class="control-label col-sm-2" for="inputDireccion">Direccion:</label> -->
+                      <div class="col-sm-12">
+                          <input type="text" class="form-control" id="inputDireccion" placeholder="Direccion del medico..." ng-model="consultor.actualizarConsultor.address">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <!-- <label class="control-label col-sm-2" for="inputTelefono">Telefono:</label> -->
+                      <div class="col-sm-3">
+                          <input type="text" class="form-control" id="inputTelefono" placeholder="Telefono..." ng-model="consultor.actualizarConsultor.phone">
+                      </div>
+                      <!-- <label class="control-label col-sm-2" for="inputCodigoOficial">Codigo oficial::</label> -->
+                      <div class="col-sm-9">
+                          <input type="text" class="form-control" id="inputCodigoOficial" placeholder="*Codigo de medico/ Estudiante..." ng-model="consultor.actualizarConsultor.officialcode">
+                      </div>
+                  </div>
+
+                  <div class="form-group" ng-if="false">
+                      <!-- <label class="control-label col-sm-2" for="inputIdbusiness">Empresa:</label> -->
+                      <div class="col-sm-12">
+                          <input ng-disabled="true" type="text" class="form-control" id="inputIdbusiness" placeholder="Institucion medica..." ng-value="main.user.idBusiness" ng-model="consultor.actualizarConsultor.idBusiness">
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <!-- <label class="control-label col-sm-2" for="inputComentario">Comentario:</label> -->
+                      <div class="col-sm-12">
+                          <textarea class="form-control" rows="3" id="inputComentario" placeholder="Comentario/ nota..." ng-model="consultor.actualizarConsultor.comment"></textarea>
+                      </div>
+                  </div>
+
+                  <div class="form-group-col-md-12" style="margin-right:-15px;margin-left:-15px">
+                      <table class="table table-hover table-bordered">
+                          <thead>
+                              <tr>
+                                  <th class="col-sm-12" colspan="3">Especificaciones</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td class="col-sm-10"  >
+                                      <input style="display:table-cell; width:100%" ng-disabled="false" type="text" id="inputIdEspecialidad" placeholder="Especialidad...">
+
+                                  <!-- style="width: 100%; box-sizing: border-box; -webkit-box-sizing:border-box; -moz-box-sizing: border-box;"  -->
+                                  <!-- display:table-cell; width:100%; height:100%" -->
+
+                                  </td>
+                                  <td class="col-sm-1" style="text-align:center">
+                                      <a href="" data-toggle="modal" data-target="#myModal">
+                                          <span class="glyphicon glyphicon-pencil"></span>
+                                      </a>
+                                    </td>
+                                    <td class="col-sm-1" style="text-align:center">
+                                      <a class="" href="" data-toggle="modal" data-target="#myModal">
+                                          <span class="glyphicon glyphicon-trash"></span>
+                                      </a>
+
+                                    </td>
+
+                                  </td>
+                              </tr>
+                          </tbody>
+                      </table>
+
+                  </div>
+
+
+                  <!-- <div class="form-group pull-left">
+                      <div class="col-sm-12">
+                          <div class="checkbox">
+                              <label><input type="checkbox"  ng-model="consultor.consultorData.status"> Activo</label>
+                          </div>
+                      </div>
+                  </div> -->
+
+
+
+
+              </div>
+              <!-- <div class="form-group">
+              </div>
+
+             ng-if="consultor.message"
+
+            -->
+
+              <div class="modal-footer">
+                  <div ng-if="consultor.error" class="alert alert-dismissible alert-danger alert-col-sm-2" style="text-align:center">
+                      <button type="button" class="close" data-dismiss="alert">&times;</button>
+                      <strong>Error!</strong> <a href="#" class="alert-link">{{consultor.error }}</a>
+                  </div>
+                  <div class="alert alert-dismissible alert-success alert-col-sm-2" style="text-align:center">
+                      <button type="button" class="close" data-dismiss="alert">&times;</button>
+                      <strong>Exitos!</strong> <a href="#" class="alert-link">{{consultor.message }}</a>
+                  </div>
+
+                  <div class="form-group">
+                  <!-- <div style="text-align:left" class="col-sm-2" > -->
+                  <!-- <div class="well col-sm-2" style="margin-left:-15px"> -->
+                    <!-- <div class="col-sm-12"> -->
+                        <!-- <div class="checkbox"> -->
+                            <!-- <label><input type="checkbox"  ng-model="consultor.consultorData.status"> Activo</label> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+                  <!-- </div> -->
+                   <!-- style="text-align:right;margin-right:-15px" background-color:#d3d3d3-->
+                  <div class="col-sm-3" style="text-align:left;">
+                    <!-- <div class="checkbox"> -->
+                        <label><input type="checkbox"  ng-model="consultor.actualizarConsultor.status"> Activo</label>
+                    <!-- </div> -->
+                  </div>
+                  <div class="col-sm-1">
+                  </div>
+                  <div class="col-sm-8" style="text-align:right;">
+
+                                          <button type="button" class="btn btn-default"  ng-click="consultor.cancelConsultor()"  data-dismiss="modal" >Cancelar</button>
+                                          <button ng-disabled="formConsultorDelete.$invalid" type="submit" class="btn btn-primary" data-dismiss="modal" ng-click="consultor.deleteConsultor(actualizarConsultor)">Borrar</button>
+                  </div>
+            </div>
+
+
+              </div>
+          </form>
+
+
+      </div>
+  </div>
+<!-- </div> -->

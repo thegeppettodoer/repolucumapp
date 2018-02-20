@@ -1,0 +1,31 @@
+{
+  "name": "lucumapp",
+  "version": "0.0.1",
+  "description": "aplicacion crm empresas vs clientes",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "dgb",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "jsonwebtoken": "^7.1.9",
+    "mongoose": "^4.6.6",
+    "morgan": "^1.7.0",
+    "nodemon": "^1.11.0",
+    "socket.io": "^1.5.1"
+  },
+   "engine": {
+    "node": "*",
+    "npm": "*"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "IP=0.0.0.0 PORT=3030 mocha --timeout 5000 tests/*_test.js"
+  },
+  "devDependencies": {}
+}

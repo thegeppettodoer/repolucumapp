@@ -1,0 +1,166 @@
+<!-- <div class="jumbotron text-center" ng-if="!main.loggedIn">
+    <div>
+        <h1>Aplicacion de gestion de productividad
+    </h1>
+    </div>
+    <div>
+        <p>Acceder a la aplicacion</p>
+        <a href="/login" class="btn btn-primary">Iniciar sesion</a>
+    </div>
+</div> -->
+
+
+
+<div ng-if="main.loggedIn">
+
+
+
+
+
+  <div class="col-md-12">
+
+    <ol class="breadcrumb">
+        <li><a href="/">Medical Dojo</a></li>
+        <li class="active">Tasks</li>
+    </ol>
+    <!--
+    <div class="alert alert-success alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+            &times;
+         </button> Success! Well done its submitted.
+    </div>
+
+    <div class="alert alert-info alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+            &times;
+         </button> Info! take this info.
+    </div>
+
+    <div class="alert alert-warning alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+            &times;
+         </button> Warning ! Dont submit this.
+    </div>
+
+    <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+            &times;
+         </button> Error ! Change few things.
+    </div>
+
+-->
+
+
+
+
+
+
+<!--
+
+
+    <div class="panel panel-primary" ng-controller="StoryController as story">
+      <div class="panel-heading">
+        <h3 class="panel-title">Tareas</h3>
+      </div>
+      <div class="panel-body">
+        <div class="col-md-3">
+
+         </div>
+
+            <table class="table table-striped table-hover ">
+              <form ng-submit="story.createStory()">
+              <thead>
+                <tr>
+                  <th><input class="form-control" type="text" name="idtask" ng-model="story.storyData.idtask" placeholder="idtask..." > </th>
+                  <th><input class="form-control input-lg" type="text" name="task" ng-model="story.storyData.task" placeholder="task..." > </th>
+                  <th><input class="form-control input-lg" type="text" name="description" ng-model="story.storyData.description" placeholder="description..." > </th>
+                  <th><input class="form-control input-lg" type="text" name="idEmployee" ng-model="story.storyData.idEmployee" placeholder="idEmployee..." > </th>
+                  <th><input class="form-control input-lg" type="text" name="costInit" ng-model="story.storyData.costInit" placeholder="costInit..." > </th>
+                  <th><input class="form-control input-lg" type="text" name="costMiddle" ng-model="story.storyData.costMiddle" placeholder="costMiddle..." > </th>
+                  <th><input class="form-control input-lg" type="text" name="costFinal" ng-model="story.storyData.costFinal" placeholder="costFinal..." > </th>
+                  <th><input class="form-control input-lg" type="text" name="status" ng-model="story.storyData.status" placeholder="status..." > </th>
+                <th><button type="submit" class="btn btn-success">Insertar</button></th>
+                </tr>
+              </thead>
+
+              </form>
+
+              <tbody>
+                <tr class="panel panel-success"  ng-repeat="each in story.stories ">
+                  <td><p>{{ each.idtask }}</p> </td>
+                  <td><p>{{ each.task }}</p> </td>
+                  <td><p>{{ each.description }}</p> </td>
+                  <td><p>{{ each.idEmployee }}</p> </td>
+                  <td><p>{{ each.costInit }}</p> </td>
+                  <td><p>{{ each.costMiddle }}</p> </td>
+                  <td><p>{{ each.costFinal }}</p> </td>
+                  <td><p>{{ each.status }}</p> </td>
+                  <td><p>{{ each.dateCreate }}</p> </td>
+                  <td><p>{{ each.userCreate }}</p> </td>
+                  <td><p>{{ each.dateUpdated }}</p> </td>
+                  <td><p>{{ each.userUpdated }}</p> </td>
+
+                </tr>
+              </tbody>
+            </table>
+
+
+            <div class="col-md-3">
+
+             </div>
+
+
+      </div>
+    </div>
+-->
+
+
+
+
+
+<div class="panel panel-default">
+
+
+    <div class="col-md-12" ng-controller="StoryController as task">
+        <!-- <div class="row"> -->
+            <div class="panel panel-primary">
+                <div class="panel-heading">Escribir una tarea</div>
+                <div class="panel-body">
+                    <form ng-submit="task.createStory()">
+                        <input class="form-control" type="text" name="story" ng-model="task.storyData.task" placeholder="....." required>
+                    </form>
+                </div>
+
+                <div class="panel panel-success">
+                    <div class="panel-heading">Mis tareas</div>
+                    <div class="panel-body" ng-repeat="each in task.stories | orderBy: 'dateCreate':true">
+                        <p>{{ each.task }}</p>
+                    </div>
+
+                </div>
+                <div class="col-md">
+                <ul class="pagination pagination-sm">
+                  <li class="disabled"><a href="#">&laquo;</a></li>
+                  <li class="active"><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li><a href="#">5</a></li>
+                  <li><a href="#">&raquo;</a></li>
+                </ul>
+              </div>
+
+            </div>
+        <!-- </div> -->
+    </div>
+
+
+
+</div>
+
+
+
+
+
+  </div>
+</div>

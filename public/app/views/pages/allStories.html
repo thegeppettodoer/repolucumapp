@@ -1,0 +1,69 @@
+<!--<div class="row">
+
+    <div class="col-md-3">
+
+    </div>
+
+    <div class="col-md-4">
+        <div class="row">
+            <div class="panel panel-success">
+
+                <div class="panel-heading">Mis tareas</div>
+
+                <div class="panel-body" >
+                  </table>
+                    <tbody>
+                      <tr class="panel panel-success"  ng-repeat="each in story.stories | reverse">
+                        <td><<p>{{ each.idtask }}</p> </td>
+                        <td><p>{{ each.task }}</p> </td>
+                        <td><p>{{ each.description }}</p> </td>
+                        <td><p>{{ each.idEmployee }}</p> </td>
+                        <td><p>{{ each.costInit }}</p> </td>
+                        <td><p>{{ each.costMiddle }}</p> </td>
+                        <td><p>{{ each.costFinal }}</p> </td>
+                        <td><p>{{ each.status }}</p> </td>
+                        <td><p>{{ each.dateCreate }}</p> </td>
+                        <td><p>{{ each.userCreate }}</p> </td>
+                        <td><p>{{ each.dateUpdated }}</p> </td>
+                        <td><p>{{ each.userUpdated }}</p> </td>
+
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-3">
+
+    </div>
+
+</div>
+
+-->
+
+<div class="col-md-12">
+    <ol class="breadcrumb">
+        <li><a href="/">Medical Dojo</a></li>
+        <li class="active">Totas las tareas</li>
+    </ol>
+
+
+
+
+
+    <div class="panel panel-success" >
+
+        <div class="panel-heading">Listar consultores</div>
+
+        <div class="panel-body" ng-repeat="each in story.stories | reverse">
+            <p>{{ each.task }}</p>
+        </div>
+    </div>
+
+
+
+
+</div>

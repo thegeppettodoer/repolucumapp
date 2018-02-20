@@ -1,0 +1,49 @@
+<div class="container" ng-controller="UserCreateController as user">
+            <div class="col-sm-3">
+            </div>
+              <div class="col-sm-6">
+            <h1>Signup!</h1>
+
+            <form name="formsignup" method="post" ng-submit="user.singupUser()">
+                Nombre: <input type="text" name="name" class="form-control" ng-model="user.userData.name" required oninvalid="this.setCustomValidity('Ingresar nombre')">
+                Usuario: <input type="text" name="username" class="form-control" ng-model="user.userData.username" required oninvalid="this.setCustomValidity('Ingresar el usuario')">
+                Password: <input type="password" id="password" name="password" class="form-control" ng-model="user.userData.password" required oninvalid="this.setCustomValidity('Ingresar password')">
+                Confirmar Password: <input type="password" id="confirm_password" name="confirm_password"
+                class="form-control" ng-model="user.userData.confirm_password" required oninvalid="this.setCustomValidity('Ingresar password de confirmacion')" >
+<!--               formsignup.$invalid && (     invalid-if=="user.userData.password != user.userData.confirm_password"
+-->
+                Codigo negocio: <input type="text" name="idBusiness" class="form-control" ng-model="user.userData.idBusiness" required oninvalid="this.setCustomValidity('Ingresar el codigo del negocio')">
+
+                  <div ng-if="user.userData.password != user.userData.confirm_password" class="alert alert-dismissible alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Ingresar el password!</strong> <a href="#" class="alert-link"> correcto</a>.
+                  </div>
+
+
+                <p>Email: <input type="email" name="email" class="form-control" ng-model="user.userData.email"  for="inputError" required oninvalid="this.setCustomValidity('Ingresar email valido')">
+<!--
+                  <div ng-show="formsignup.email.$dirty && formsignup.email.$invalid" class="alert alert-dismissible alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+                  </div>
+                </p>
+              -->
+
+
+
+                <button ng-disabled="formsignup.$invalid || user.userData.password != user.userData.confirm_password" type="submit" class="btn btn-danger">Crear cuenta</button>
+
+
+  <!--
+                <div ng-if="login.error"  class="alert alert-success alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                        &times;
+                     </button>{{login.error }}.
+                </div>
+              -->
+
+            </form>
+        </div>
+        <div class="col-sm-3">
+        </div>
+ </div>
